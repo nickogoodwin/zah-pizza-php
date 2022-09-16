@@ -1,0 +1,387 @@
+/* 
+Nicko Goodwin
+1/19/2021
+
+Color Pallette:
+Blue: #003049
+Red: #d62828
+Dark Red: #7c1818;
+Orange: #f77f00
+Yellow: #fcbf49
+Light Yellow: #eae2b7
+
+****** MOD LOG ******
+	1/27/2022
+		-added underline text decoration to nav-link's
+		-added styling for contact page
+
+	2/1/2022
+		-added menu page styling
+
+	2/2/2022
+		-added about page styling
+
+	2/8/2022
+		-added styling for Build your Zah Box
+
+*/
+
+body {
+	min-width: 576px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1;	
+}
+
+/* Header and Nave */
+nav {
+	background-color: #d62828;
+}
+
+.navbar-nav a:hover {
+	color: #003049 !important;
+	text-decoration: underline;
+}
+
+#build {
+	padding: 0.5em 1em;
+	text-decoration: none;
+	background-color: #fcbf49;
+	border-radius: 2em;
+	color: black;
+	box-shadow: 1px 1px 1em #7c1818;
+}
+
+#build:hover {
+	background-color: #f77f00;
+}
+
+#build:active {
+	box-shadow: inset 1px 1px 1em #7c1818;
+}
+
+/* Sections */
+
+section {
+	height: 95vh;
+}
+
+.section-text-box {
+	width: 90%;
+	border-radius: 5em 2em 5em 2em;
+	box-shadow: 0 0 3em black;
+}
+
+.section-heading {
+	background-color: #d62828;
+	color: white;
+	padding: 1.5em;
+	/* width: 100%; */
+	margin: auto;
+	border-radius: 5em 1em 0 0;
+}
+
+.section-text {
+	background-color: white;
+	/* width: 100%; */
+	margin: auto;
+	padding: 2em;
+	border-radius: 0 0 5em 1em;
+}
+
+/* Hero Section */
+#hero {
+	background: linear-gradient(
+			to right,
+			rgba(247, 127, 0, 0.5),
+			rgba(255, 255, 255, 0.5)
+		),
+		url('../img/pizza-hero.jpg');
+	background-size: cover;
+}
+
+#hero-text-box {
+	animation: entrance 2s ease;
+}
+
+@keyframes entrance {
+	0% {
+		transform: translateX(-100vw) skewX(45deg);
+	}
+	50% {
+		transform: translateX(10vw) skewX(-15deg);
+	}
+	100% {
+		transform: translateX(0vw) skewX(0deg);
+	}
+}
+
+/* 'Who are we?' Section */
+#who {
+	background: linear-gradient(
+		to right,
+		rgba(247, 127, 0, 0.5),
+		rgba(255, 255, 255, 0.5)
+	);
+	background-image: url('../img/delivery.jpg');
+	background-size: cover;
+}
+
+/* Pricing Section */
+#pricing,
+#contact,
+#about,
+#build-your-box {
+	height: auto;
+	background: linear-gradient(to top, #d62828, #f77f00, #fcbf49);
+	background-size: 200% 200%;
+	animation: gradient 10s ease infinite;
+}
+
+#calculate-pricing {
+	width: 75%;
+	padding: 2em;
+	margin: auto;
+	border-radius: 5em 2em 5em 2em;
+	box-shadow: 0 0 1em black;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
+
+#pricing .card {
+	background-color: #eae2b7;
+	padding: 3em;
+	/* margin: 2em; */
+	border-radius: 5em 2em 5em 2em;
+	/* box-shadow: 0 0 3em black; */
+}
+
+.card .btn {
+	padding: 1em;
+	border-radius: 1em;
+	color: white;
+	background-color: #d62828;
+}
+
+.card .btn:hover {
+	background-color: #7c1818;
+}
+
+#basic .card-title {
+	color: #fcbf49;
+}
+
+#deluxe .card-title {
+	color: #f77f00;
+}
+
+#ultimate .card-title {
+	color: #d62828;
+}
+
+/* Gallery */
+#gallery {
+	height: auto;
+}
+
+#gallery ul {
+	display: none;
+}
+
+#gallery img {
+	width: 100%;
+	height: 50vh;
+}
+
+footer {
+	height: 25vh;
+	background-color: #7c1818;
+	color: white;
+}
+
+footer a {
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 1200px) {
+	#pricing-slider {
+		position: sticky;
+		top: 0px;
+		z-index: 1;
+	}
+}
+
+#contact {
+	height: auto;
+}
+
+i {
+	font-size: 2em;
+}
+
+#contact form {
+	width: 75%;
+	margin: auto;
+	border-radius: 5em 2em 5em 2em;
+	box-shadow: 0 0 1em black;
+}
+
+#contact form button {
+	width: 25%;
+	background-color: #d62828;
+}
+
+#contact form button:hover {
+	background-color: #f77f00;
+}
+
+#joined-newsletter,
+#contacted-us {
+	height: 90vh;
+	background: linear-gradient(to top, #d62828, #f77f00, #fcbf49);
+	background-size: 200% 200%;
+	animation: gradient 10s ease infinite;
+}
+
+/* FAQ */
+#faq {
+	height: 90vh;
+	background: linear-gradient(to top, #d62828, #f77f00, #fcbf49);
+	background-size: 200% 200%;
+	animation: gradient 10s ease infinite;
+}
+
+#faq h3 a {
+	text-decoration: none;
+}
+
+#faq .section-text {
+	text-align: start;
+}
+
+#faq .section-text h3 {
+	margin-top: 1em;
+}
+
+/* Menu  */
+#menu {
+	height: auto;
+	background: linear-gradient(to top, #d62828, #f77f00, #fcbf49);
+	background-size: 200% 200%;
+	animation: gradient 10s ease infinite;
+}
+
+#menu .tabs {
+	cursor: pointer;
+}
+
+/* About */
+#about {
+	height: auto;
+}
+
+#about .cycle-slideshow {
+	width: 40%;
+	margin: auto;
+}
+
+#about .cycle-slideshow img {
+	width: 100%;
+	height: auto;
+}
+
+#about .center a {
+	color: #d62828;
+}
+
+#about .center a:hover {
+	color: #f77f00;
+}
+
+/* Build your box */
+.box-builder {
+	padding: 2em;
+	border-radius: 5em 2em 5em 2em;
+	box-shadow: inset 0 0 2em #f77f00;
+}
+
+.box-builder h3 {
+	color: #d62828;
+}
+
+.box-builder-section {
+	margin: 2em 0;
+}
+
+.output-section {
+	background-color: lightgray;
+	padding: 1em;
+	border-radius: 2em;
+	box-shadow: 0 0 2em #838383;
+}
+
+.box-builder-section textarea {
+	width: 80%;
+}
+
+.box-builder-section span {
+	color: #f77f00;
+	font-size: 0.8em;
+}
+
+.selector-section {
+	border: 1px solid red;
+	margin: 0.5em;
+}
+
+/* Account creation */
+.place-order {
+	padding: 2em;
+	border-radius: 5em 2em 5em 2em;
+	box-shadow: inset 0 0 2em #f77f00;
+}
+
+.place-order h1 {
+	color: #d62828;
+}
+
+.place-order div {
+	margin-bottom: 1em;
+}
+.place-order label {
+	display: inline-block;
+	width: 7em;
+	text-align: right;
+}
+.place-order input {
+	margin-left: 1em;
+	margin-right: 0.5em;
+}
+.place-order span {
+	color: red;
+}
+
+/* Thank you page */
+#zah-box-builder {
+	/* display: none; */
+}
+
+#thank-you {
+	display: none;
+	height: auto;
+}
