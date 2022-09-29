@@ -209,7 +209,7 @@ section {
 }
 
 footer {
-	height: 25vh;
+	height: 250px;
 	background-color: #7c1818;
 	color: white;
 }
@@ -249,6 +249,8 @@ i {
 #contact form button:hover {
 	background-color: #f77f00;
 }
+
+
 
 #joined-newsletter,
 #contacted-us {

@@ -12,10 +12,12 @@
             <form
               id="contact-form"
               class="p-5"
-              enctype="text/plain"
-              method="GET"
+              method="POST"
+              action='contact'
               name="Contact Form"
             >
+            <input type="hidden" name="action" value='submit_contact_form'>
+
               <h3>Questions? Concerns?</h3>
               <p class="lead">(Want to sign up for our newsletter?)</p>
               <p class="lead">Please fill out this form</p>
@@ -97,14 +99,14 @@
               </div>
 
               <!-- Newsletter -->
-              <div class="row">
+              <div class="row mb-5">
                 <div
                   class="col-2 d-flex justify-content-center align-items-center"
                 >
                   <i class="bi bi-newspaper"></i>
                 </div>
                 <div class="col-10 text-start top-50 m-0">
-                  <input type="checkbox" name="newsletter" id="newsletter" />
+                  <input type="checkbox" name="newsletter" id="newsletter"/>
                   <label for="newsletter">Sign up for our newsletter?</label>
                 </div>
               </div>
@@ -147,4 +149,3 @@
         </div>
       </section>
     </main>
-    <script defer src="js/contact.js"></script>

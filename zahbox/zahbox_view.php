@@ -304,7 +304,7 @@
 						<p class="lead">Your Zah box will arrive on wednesday!</p>
 						<p class="lead">
 							Don't even worry that we didn't ask you for a shipping address, we
-							know where you are.
+							know where you are. &#128065;&#128065;
 						</p>
 					</div>
 				</div>

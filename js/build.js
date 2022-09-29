@@ -13,6 +13,11 @@ const toppingsPrice = 2.0;
 const saladPrice = 2.5;
 const drinkPrice = 3.0;
 
+let sizeEl = document.querySelectorAll('input[name="size"]')
+let toppingsEl = document.querySelectorAll('input[name="toppings"]')
+let saladEl = document.querySelectorAll('input[name="salad"]')
+let drinkEl = document.querySelectorAll('input[name="drink"]')
+
 const addItems = () => {
 	localStorage.pizzaSize = '';
 	localStorage.toppings = '';
@@ -22,13 +27,23 @@ const addItems = () => {
 
 	let currentPrice = 0.0;
 
+	let selectedSize = document.querySelectorAll('input[name="size"]:checked')
+	let selectedToppings = document.querySelectorAll('input[name="toppings"]:checked')
+	let selectedSalad = document.querySelectorAll('input[name="salad"]:checked')
+	let selectedDrink = document.querySelectorAll('input[name="drink"]:checked')
+
+	let sizeError = document.querySelector('#size-error')
+	let saladError = document.querySelector('#salad-error')
+	let drinkError = document.querySelector('#drink-error')
+
 	// Size
 	//make sure something is selected
-	if ($('#size-selector input[name="size"]:checked').length < 1) {
-		$('#size-error').text('You must select a size option!');
+	if (selectedSize.length < 1) {
+		sizeError.textContent = 'You must select a size option!';
 	} else {
-		$('#size-error').text('*');
-		let sizeValue = $('#size-selector input[name="size"]:checked').val();
+		sizeError.textContent = '*';
+		let sizeValue = selectedSize[0].value;
+		console.log(sizeValue)
 		switch (sizeValue) {
 			case 'small':
 				currentPrice += basicPrice;
@@ -44,54 +59,49 @@ const addItems = () => {
 	}
 
 	// Toppings
-	if ($('#topping-selector input[name="toppings"]:checked').length < 1) {
+	if (selectedToppings.length < 1) {
 		localStorage.toppings = 'none';
 	} else {
-		let toppingsValues = $('#topping-selector input[name="toppings"]:checked');
-		if (toppingsValues.length > 0) {
-			toppingsValues.each((index, element) => {
-				localStorage.toppings += `${element.value} `;
-				currentPrice += toppingsPrice;
-			});
-		}
+		selectedToppings.forEach((topping) => {
+			localStorage.toppings += `${topping.value} `
+			currentPrice += toppingsPrice;
+		})
 	}
 
 	//Salad
-	if ($('#salad-selector input[name="salad"]:checked').length < 1) {
-		$('#salad-error').text('You must select a salad option!');
+	if (selectedSalad.length < 1) {
+		saladError.textContent = 'You must select a salad option!';
 	} else {
-		$('#salad-error').text('*');
-		let saladValue = $('#salad-selector input[name="salad"]:checked').val();
+		saladError.textContent = '*';
+		let saladValue = selectedSalad[0].value
+		
+		console.log(saladValue)
+
 		localStorage.salad = saladValue;
-		if (saladValue != 'none') {
+		if (selectedSalad != 'none') {
 			currentPrice += saladPrice;
 		}
 	}
 
 	//Drink
-	if ($('#drink-selector input[name="drink"]:checked').length < 1) {
-		$('#drink-error').text('You must select a drink option!');
+	if (selectedDrink.length < 1) {
+		drinkError.textContent = 'You must select a drink option!';
 	} else {
-		$('#drink-error').text('*');
-		let drinkValue = $('#drink-selector input[name="drink"]:checked').val();
+		drinkError.textContent = '*';
+		let drinkValue = selectedDrink[0].value;
+
 		localStorage.drink = drinkValue;
 		if (drinkValue != 'none') {
 			currentPrice += drinkPrice;
 		}
 	}
 
-	if ($('#output').val()) {
-		localStorage.note = $('#note').val();
-	}
+	//note
+	localStorage.note = `${document.querySelector('#note').value}`
 
 	return currentPrice;
 };
 
-/** THIS IS WHERE YOU LEFT OFF!!! 2/8/2022
- * TODO:
- * -capitalize first letters
- * -serialize toppings w/ split()
- */
 const clearDisplay = () => {
 	localStorage.removeItem('pizzaSize');
 	localStorage.removeItem('toppings');
@@ -121,10 +131,11 @@ const updateDisplay = (price) => {
     Salad: ${localStorage.salad}
     Drink: ${localStorage.drink}
 	Note: ${localStorage.note}
+	\n
     Total: ${currencyFormatter.format(price)}
     `;
 
-		$('#output').val(output);
+		document.querySelector('#output').value = output;
 	} else {
 		alert('Please select all required options');
 	}
@@ -133,26 +144,29 @@ const updateDisplay = (price) => {
 // limit max toppings to 5
 const limitMaxToppings = () => {
 	let max = 5;
+	let selectedToppings = document.querySelectorAll('input[name="toppings"]:checked')
 
-	if ($('input[name="toppings"]:checked').length === max) {
-		$('input[name="toppings"]').attr('disabled', 'true');
-		$('input[name="toppings"]:checked').removeAttr('disabled');
+	if (document.querySelectorAll('input[name="toppings"]:checked').length === max) {
+		toppingsEl.forEach((topping) => {
+			topping.setAttribute('disabled', 'true')
+		});
+		selectedToppings.forEach((checkedTopping) => {
+			checkedTopping.removeAttribute('disabled')
+		})
 	} else {
-		$('input[name="toppings"]').removeAttr('disabled');
+		toppingsEl.forEach((topping) => {
+			topping.removeAttribute('disabled', 'true')
+		})
 	}
 };
 
-$(document).ready(() => {
-	$('input[name="toppings"]').change(() => {
-		limitMaxToppings();
-	});
+toppingsEl.forEach((topping) => {
+	topping.addEventListener('change', limitMaxToppings)
+})
 
-	$('#add-to-box').click(() => {
-		let boxPrice = addItems();
-		updateDisplay(boxPrice);
-	});
+document.querySelector('#add-to-box').addEventListener('click', () => {
+	let boxPrice = addItems();
+	updateDisplay(boxPrice);
+})
 
-	$('#clear-box').click(() => {
-		clearDisplay();
-	});
-});
+document.querySelector('#clear-box').addEventListener('click', clearDisplay)

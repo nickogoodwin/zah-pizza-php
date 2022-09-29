@@ -36,70 +36,87 @@ const isDate = (date, datePattern, typeOfDate) => {
 	}
 };
 
-$(document).ready(() => {
-	$('#save').click(() => {
-		$('span').text(''); // clear any previous error messages
+const placeOrder = () => {
+	// clear any previous error messages
+	let errorEls = document.querySelectorAll('.place-order span');
+	errorEls.forEach((errorEl) => {
+		errorEl.textContent = ''
+	})
 
-		// get values entered by user
-		const email = $('#email').val();
-		const phone = $('#phone').val();
-		const zip = $('#zip').val();
-		const dob = $('#dob').val();
-		const card = $('#card').val();
-		const cardDate = $('#cc_date').val();
+	// get values entered by user
+	const emailEl = document.querySelector('#email');
+	const phoneEl = document.querySelector('#phone');
+	const zipEl = document.querySelector('#zip');
+	const dobEl = document.querySelector('#dob');
+	const cardEl = document.querySelector('#card');
+	const cardDateEl = document.querySelector('#cc_date');
 
-		// regular expressions for validity testing
-		const emailPattern = /^[\w\.\-]+@[\w\.\-]+\.[a-zA-Z]+$/;
-		const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
-		const zipPattern = /^\d{5}(-\d{4})?$/;
-		const datePattern = /^[01]?\d\/[0-3]\d\/\d{4}$/;
-		//cardPattern = NNNN-NNNN-NNNN-NNNN
-		const cardPattern = /\d{4}-\d{4}-\d{4}-\d{4}/;
-		//cardDatePattern = MM/YYYY
-		const cardDatePattern = /^[01]?\d\/\d{4}/;
+	let email = emailEl.value;
+	let phone = phoneEl.value;
+	let zip = zipEl.value;
+	let dob = dobEl.value;
+	let card = cardEl.value;
+	let cardDate = cardDateEl.value;
 
-		// check user entries for validity
-		let isValid = true;
-		if (email === '' || !emailPattern.test(email)) {
-			isValid = false;
-			$('#email').next().text('Please enter a valid email.');
-		}
-		if (phone === '' || !phonePattern.test(phone)) {
-			isValid = false;
-			$('#phone')
-				.next()
-				.text('Please enter a phone number in NNN-NNN-NNNN format.');
-		}
-		if (zip === '' || !zipPattern.test(zip)) {
-			isValid = false;
-			$('#zip').next().text('Please enter a valid zip code.');
-		}
-		if (dob === '' || !isDate(dob, datePattern, 'mm/dd/yyyy')) {
-			isValid = false;
-			$('#dob').next().text('Please enter a valid date in MM/DD/YYYY format.');
-		}
-		// check card for validity
-		if (card === '' || !cardPattern.test(card)) {
-			isValid = false;
-			$('#card')
-				.next()
-				.text('Please enter a credit card in NNNN-NNNN-NNNN-NNNN format.');
-		}
-		//check cardDate for validity
-		if (cardDate === '' || !isDate(cardDate, cardDatePattern, 'mm/yyyy')) {
-			isValid = false;
-			$('#cc_date').next().text('Please enter a valid date in MM/YYYY format.');
-		}
+	// regular expressions for validity testing
+	const emailPattern = /^[\w\.\-]+@[\w\.\-]+\.[a-zA-Z]+$/;
+	const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+	const zipPattern = /^\d{5}(-\d{4})?$/;
+	const datePattern = /^[01]?\d\/[0-3]\d\/\d{4}$/;
+	//cardPattern = NNNN-NNNN-NNNN-NNNN
+	const cardPattern = /\d{4}-\d{4}-\d{4}-\d{4}/;
+	//cardDatePattern = MM/YYYY
+	const cardDatePattern = /^[01]?\d\/\d{4}/;
 
-		if (isValid) {
-			if ($('#output').val()) {
-				$('#zah-box-builder').css('display', 'none');
-				$('#thank-you').css('display', 'block');
-			} else {
-				alert('Please build your Zah Box');
-			}
-		}
+	// check user entries for validity
+	let isValid = true;
+	if (email === '' || !emailPattern.test(email)) {
+		isValid = false;
+		emailEl.nextElementSibling.textContent = 'Please enter a valid email.'
+		emailEl.focus()
+	}
+	//check phone for validity
+	if (phone === '' || !phonePattern.test(phone)) {
+		isValid = false;
+		phoneEl.nextElementSibling.textContent = 'Please enter a phone number in NNN-NNN-NNNN format.'
+		phoneEl.focus()
+	}
+	//check zip for validity
+	if (zip === '' || !zipPattern.test(zip)) {
+		isValid = false;
+		zipEl.nextElementSibling.textContent = 'Please enter a valid zip code.';
+		zipEl.focus()
+	}
+	//check dob for validity
+	if (dob === '' || !isDate(dob, datePattern, 'mm/dd/yyyy')) {
+		isValid = false;
+		dobEl.nextElementSibling.textContent = 'Please enter a valid date in MM/DD/YYYY format.';
+		dobEl.focus()
+	}
+	// check card for validity
+	if (card === '' || !cardPattern.test(card)) {
+		isValid = false;
+		cardEl.nextElementSibling.textContent = 'Please enter a credit card in NNNN-NNNN-NNNN-NNNN format.'
+		cardEl.focus()
+	}
+	//check cardDate for validity
+	if (cardDate === '' || !isDate(cardDate, cardDatePattern, 'mm/yyyy')) {
+		isValid = false;
+		cardDateEl.nextElementSibling.textContent = 'Please enter a valid date in MM/YYYY format.';
+		cardDateEl.focus()
+	}
 
-		$('#email').focus();
-	});
-});
+	if (isValid) {
+		let orderItems = document.querySelector('#output').value; //change this to grab values from localStorage
+		if (orderItems) {
+			document.querySelector('#zah-box-builder').style.display = 'none';
+			document.querySelector('#thank-you').style.display = 'block';
+		} else {
+			alert('Please build your Zah Box')
+		}
+	}
+
+}
+
+let placeOrderBtn = document.querySelector('#save');
+placeOrderBtn.addEventListener('click', placeOrder);

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light text-white">
     <div class="container-fluid">
-        <a href="index.html" class="navbar-brand">
+        <a href="home" class="navbar-brand">
             <img
               src="img/pizza-logo.png"
               height="100"

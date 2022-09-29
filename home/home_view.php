@@ -18,6 +18,48 @@
         </div>
       </section>
 
+      <!-- Gallery -->
+      <section id="gallery">
+        <div class="row g-0">
+          <div class="container col-4">
+            <img class="img-main" id="image1" src="img/rollover/pizza1.jpg" alt="pizza in oven"/>
+            <img class="img-hover" id="image2" src="img/rollover/pizza2.jpg" alt="slice o zah" />
+          </div>
+          <div class="container col-4">
+            <img class="img-main" id="image3" src="img/rollover/pizza3.jpg" alt="pizza on paper"/>
+            <img class="img-hover" id="image4" src="img/rollover/pizza4.jpg" alt="three pizzas" />
+          </div>
+          <div class="container col-4">
+            <img class="img-main" id="image5" src="img/rollover/pizza5.jpg" alt="pizza with spinach and tomato"/>
+            <img class="img-hover" id="image6" src="img/rollover/pizza6.jpg" alt="pizza by fire" />
+          </div>
+        </div>
+        
+        <style>
+          #gallery .container {
+            position: relative;
+            max-width: 100%;
+          }
+
+          #gallery .container img.img-hover {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            object-fit: containt;
+            opacity: 0;
+            transition: opacity .2s;
+          }
+
+          #gallery .container:hover img.img-hover {
+            opacity: 1;
+          }
+
+
+        </style>
+      </section>
+
       <!-- Who Are we? -->
       <section
         id="who"
@@ -93,11 +135,11 @@
               </p>
               <p class="lead">How many toppings would you like?</p>
               <div id="pricing-slider" class="bg-white py-2">
-                <label for="toppings">Number of Toppings</label>
+                <label for="toppings-slider">Number of Toppings</label>
                 <input
                   type="range"
-                  name="toppings"
-                  id="toppings"
+                  name="toppings-slider"
+                  id="toppings-slider"
                   value="0"
                   min="0"
                   max="5"
@@ -148,32 +190,6 @@
         </div>
       </section>
 
-      <!-- Gallery -->
-      <section id="gallery">
-        <ul id="image-list">
-          <li><a href="img/rollover/pizza4.jpg"></a></li>
-          <li><a href="img/rollover/pizza5.jpg"></a></li>
-          <li><a href="img/rollover/pizza5.jpg"></a></li>
-        </ul>
-        <div class="row g-0">
-          <div class="col-4">
-            <img
-              id="image1"
-              src="img/rollover/pizza1.jpg"
-              alt="pizza in oven"
-            />
-          </div>
-          <div class="col-4">
-            <img id="image2" src="img/rollover/pizza2.jpg" alt="slice o zah" />
-          </div>
-          <div class="col-4">
-            <img
-              id="image3"
-              src="img/rollover/pizza3.jpg"
-              alt="pizza on paper"
-            />
-          </div>
-        </div>
-      </section>
+      
+
 </main>
-<script defer src="js/index.js"></script>
