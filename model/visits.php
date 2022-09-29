@@ -1,5 +1,5 @@
 <?php
-include('../model/db.php');
+include('db.php');
 
 function add_visit($name, $email, $phone, $message, $newsletter) {
     global $db;

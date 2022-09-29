@@ -17,19 +17,19 @@
         >
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="img/about_slideshow/pizza-gal.jpg" class="d-block w-100" alt="..." />
+              <img src="/zah-pizza-php/public/img/about_slideshow/pizza-gal.jpg" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item">
-              <img src="img/about_slideshow/more-pizza-friends.jpg" class="d-block w-100" alt="..." />
+              <img src="/zah-pizza-php/public/img/about_slideshow/more-pizza-friends.jpg" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item">
-              <img src="img/about_slideshow/pizza-friends.jpg" class="d-block w-100" alt="..." />
+              <img src="/zah-pizza-php/public/img/about_slideshow/pizza-friends.jpg" class="d-block w-100" alt="..." />
             </div>
 			<div class="carousel-item">
-              <img src="img/about_slideshow/pizza-dude.jpg" class="d-block w-100" alt="..." />
+              <img src="/zah-pizza-php/public/img/about_slideshow/pizza-dude.jpg" class="d-block w-100" alt="..." />
             </div>
 			<div class="carousel-item">
-              <img src="img/about_slideshow/sad-pizza-gal.jpg" class="d-block w-100" alt="..." />
+              <img src="/zah-pizza-php/public/img/about_slideshow/sad-pizza-gal.jpg" class="d-block w-100" alt="..." />
             </div>
           </div>
           <button

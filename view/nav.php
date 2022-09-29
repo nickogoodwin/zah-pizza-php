@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-light text-white">
     <div class="container-fluid">
-        <a href="home" class="navbar-brand">
+        <a href="/zah-pizza-php/" class="navbar-brand">
             <img
-              src="img/pizza-logo.png"
+              src="/zah-pizza-php/public/img/pizza-logo.png"
               height="100"
               width="100"
               alt="Pizza Logo"
@@ -29,14 +29,14 @@
             <a
               class="nav-link active text-white"
               aria-current="page"
-              href="home"
+              href="."
               >Home</a
             >
-            <a class="nav-link text-white" href="menu">Menu</a>
-            <a class="nav-link text-white" href="faq">FAQ</a>
-            <a href="about" class="nav-link text-white">About Us</a>
-            <a class="nav-link text-white" href="contact">Contact Us</a>
-            <a href="zahbox" id="build" class="nav-link"
+            <a class="nav-link text-white" href="/zah-pizza-php/pages/menu">Menu</a>
+            <a class="nav-link text-white" href="/zah-pizza-php/pages/faq">FAQ</a>
+            <a  class="nav-link text-white" href="/zah-pizza-php/pages/about">About Us</a>
+            <a class="nav-link text-white" href="/zah-pizza-php/pages/contact">Contact Us</a>
+            <a  id="build" class="nav-link" href="/zah-pizza-php/pages/zahbox"
               >Build Your Zah Box</a
             >
           </div>

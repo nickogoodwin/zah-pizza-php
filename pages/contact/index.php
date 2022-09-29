@@ -1,6 +1,6 @@
 <?php
-include('../view/header.php');
-include('../view/nav.php');
+include('../../view/header.php');
+include('../../view/nav.php');
 
 
 $action = filter_input(INPUT_POST, 'action');
@@ -16,7 +16,7 @@ if ($action == 'render_page') {
 }
 
 if ($action == 'submit_contact_form') {
-    include('../model/visits.php');
+    include('../../model/visits.php');
     $name = filter_input(INPUT_POST, 'name');
     $email = filter_input(INPUT_POST, 'email');
     $phone = filter_input(INPUT_POST, 'phone');
@@ -24,7 +24,7 @@ if ($action == 'submit_contact_form') {
     $newsletter = filter_input(INPUT_POST, 'newsletter') ? true : false;
     if ($name == NULL || $email == NULL || $phone == NULL)  {
         $error_message = "Please enter all required fields.";
-        include('../errors/errors.php');
+        include('../../errors/errors.php');
     } else {
         add_visit($name, $email, $phone, $message, $newsletter);
 
@@ -41,5 +41,5 @@ if ($action == 'submit_contact_form') {
 }
 
 
-include('../view/footer.php');
+include('../../view/footer.php');
 ?>

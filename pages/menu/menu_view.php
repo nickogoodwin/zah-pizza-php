@@ -68,7 +68,7 @@
                 <div class="col-lg-4">
                   <div class="card">
                     <img
-                      src="img/menu/cheese-pizza.jpg"
+                      src="/zah-pizza-php/public/img/menu/cheese-pizza.jpg"
                       class="card-img-top"
                       alt="zah"
                     />
@@ -84,7 +84,7 @@
                 <div class="col-lg-4">
                   <div class="card">
                     <img
-                      src="img/menu/pepperoni-pizza.jpg"
+                      src="/zah-pizza-php/public/img/menu/pepperoni-pizza.jpg"
                       class="card-img-top"
                       alt="zah"
                     />
@@ -98,7 +98,7 @@
                 <div class="col-lg-4">
                   <div class="card">
                     <img
-                      src="img/menu/supreme-pizza.jpg"
+                      src="/zah-pizza-php/public/img/menu/supreme-pizza.jpg"
                       class="card-img-top"
                       alt="zah"
                     />
@@ -123,7 +123,7 @@
                 <div class="col-lg-4">
                   <div class="card">
                     <img
-                      src="img/menu/salad.jpg"
+                      src="/zah-pizza-php/public/img/menu/salad.jpg"
                       class="card-img-top"
                       alt="zah"
                     />
@@ -140,7 +140,7 @@
                 <div class="col-lg-4">
                   <div class="card">
                     <img
-                      src="img/menu/med-salad.jpg"
+                      src="/zah-pizza-php/public/img/menu/med-salad.jpg"
                       class="card-img-top"
                       alt="zah"
                     />
@@ -156,7 +156,7 @@
                 <div class="col-lg-4">
                   <div class="card">
                     <img
-                      src="img/menu/spinach.jpg"
+                      src="/zah-pizza-php/public/img/menu/spinach.jpg"
                       class="card-img-top"
                       alt="zah"
                     />
@@ -179,7 +179,7 @@
                 <div class="col-lg-4">
                   <div class="card">
                     <img
-                      src="img/menu/soda.jpg"
+                      src="/zah-pizza-php/public/img/menu/soda.jpg"
                       class="card-img-top"
                       alt="zah"
                     />
@@ -193,7 +193,7 @@
                 <div class="col-lg-4">
                   <div class="card">
                     <img
-                      src="img/menu/milk.jpg"
+                      src="/zah-pizza-php/public/img/menu/milk.jpg"
                       class="card-img-top"
                       alt="zah"
                     />
@@ -209,7 +209,7 @@
                 <div class="col-lg-4">
                   <div class="card">
                     <img
-                      src="img/menu/water.jpg"
+                      src="/zah-pizza-php/public/img/menu/water.jpg"
                       class="card-img-top"
                       alt="zah"
                     />
@@ -220,7 +220,7 @@
                         <!-- Wink emoji -->
                         &#128521;
                       </p>
-                      <a href="build.html" class="btn">Add to your Zah Box</a>
+                      <a href="../zahbox/" class="btn">Add to your Zah Box</a>
                     </div>
                   </div>
                 </div>

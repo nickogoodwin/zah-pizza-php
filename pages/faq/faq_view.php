@@ -115,4 +115,3 @@
     </div>
   </section>
 </main>
-<script defer src="js/faq.js"></script>

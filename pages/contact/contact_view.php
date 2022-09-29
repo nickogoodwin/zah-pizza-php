@@ -13,7 +13,7 @@
               id="contact-form"
               class="p-5"
               method="POST"
-              action='contact'
+              action='/zah-pizza-php/pages/contact/'
               name="Contact Form"
             >
             <input type="hidden" name="action" value='submit_contact_form'>

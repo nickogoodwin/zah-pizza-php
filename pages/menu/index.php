@@ -1,6 +1,6 @@
 <?php
-include('../view/header.php');
-include('../view/nav.php');
+include('../../view/header.php');
+include('../../view/nav.php');
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -11,9 +11,9 @@ if ($action == NULL) {
 }  
 
 if ($action == 'render_page') {
-    include('faq_view.php');
+    include('menu_view.php');
 }
 
 
-include('../view/footer.php');
- ?>
+include('../../view/footer.php');
+?>

@@ -32,21 +32,21 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="img/favicon/apple-touch-icon.png"
+      href="/zah-pizza-php/public/img/favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="img/favicon/favicon-32x32.png"
+      href="/zah-pizza-php/public/img/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="img/favicon/favicon-16x16.png"
+      href="/zah-pizza-php/public/img/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="img/favicon/site.webmanifest" />
+    <link rel="manifest" href="/zah-pizza-php/public/img/favicon/site.webmanifest" />
 
     <!-- Bootstrap -->
     <link
@@ -63,20 +63,8 @@
     />
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/zah-pizza-php/public/css/style.css" />
 
-    <!-- JQuery -->
-    <!-- <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script> -->
-    <!-- JQuery UI -->
-    <!-- <script
-      src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
-      integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
-      crossorigin="anonymous"
-    ></script> -->
     <!-- Bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -85,7 +73,7 @@
     ></script>
 
     <!-- My js -->
-    <script defer src="js/app.js"></script>
+    <script defer src="/zah-pizza-php/public/js/app.js"></script>
     
 
     <title>Zah - Pizza Subscription Service</title>

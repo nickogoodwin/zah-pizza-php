@@ -310,5 +310,5 @@
 				</div>
 			</section>
 		</main>
-		<script defer src="js/build.js"></script>
-		<script defer src="js/place_order.js"></script>
+		<script defer src="/zah-pizza-php/public/js/build.js"></script>
+		<script defer src="/zah-pizza-php/publicjs/place_order.js"></script>
