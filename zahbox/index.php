@@ -1,4 +1,3 @@
-<p>zahbox/index.php</p>
 <?php
 include('../view/header.php');
 include('../view/nav.php');

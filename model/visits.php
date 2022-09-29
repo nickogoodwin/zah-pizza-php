@@ -1,4 +1,6 @@
 <?php
+include('../model/db.php');
+
 function add_visit($name, $email, $phone, $message, $newsletter) {
     global $db;
     $query = 'INSERT INTO visits

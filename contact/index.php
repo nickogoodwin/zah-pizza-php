@@ -1,9 +1,7 @@
-<p>contact/index.php</p>
 <?php
 include('../view/header.php');
 include('../view/nav.php');
-include('../model/db.php');
-include('../model/visits.php');
+
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -18,6 +16,7 @@ if ($action == 'render_page') {
 }
 
 if ($action == 'submit_contact_form') {
+    include('../model/visits.php');
     $name = filter_input(INPUT_POST, 'name');
     $email = filter_input(INPUT_POST, 'email');
     $phone = filter_input(INPUT_POST, 'phone');

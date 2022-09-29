@@ -1,4 +1,3 @@
-<p>about/index.php</p>
 <?php
 include('../view/header.php');
 include('../view/nav.php');
