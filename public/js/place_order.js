@@ -43,14 +43,14 @@ const placeOrder = () => {
 		errorEl.textContent = ''
 	})
 
-	// get values entered by user
 	const emailEl = document.querySelector('#email');
 	const phoneEl = document.querySelector('#phone');
 	const zipEl = document.querySelector('#zip');
 	const dobEl = document.querySelector('#dob');
 	const cardEl = document.querySelector('#card');
 	const cardDateEl = document.querySelector('#cc_date');
-
+	
+	// get values entered by user
 	let email = emailEl.value;
 	let phone = phoneEl.value;
 	let zip = zipEl.value;

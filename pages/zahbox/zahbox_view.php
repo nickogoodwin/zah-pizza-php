@@ -300,7 +300,7 @@
 					</div>
 					<div class="section-text">
 						<h2>Thank you for your order!</h2>
-						<img src="img/delivery2.jpg" alt="pizza delivery" />
+						<img src="/zah-pizza-php/public/img/delivery2.jpg" alt="pizza delivery" />
 						<p class="lead">Your Zah box will arrive on wednesday!</p>
 						<p class="lead">
 							Don't even worry that we didn't ask you for a shipping address, we
@@ -311,4 +311,4 @@
 			</section>
 		</main>
 		<script defer src="/zah-pizza-php/public/js/build.js"></script>
-		<script defer src="/zah-pizza-php/publicjs/place_order.js"></script>
+		<script defer src="/zah-pizza-php/public/js/place_order.js"></script>

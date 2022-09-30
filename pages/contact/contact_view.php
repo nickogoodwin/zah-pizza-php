@@ -74,8 +74,10 @@
                       placeholder="Phone"
                     />
                     <label for="phone">Phone</label>
+                    <p style="text-align:left">Please enter your phone number in XXX-XXX-XXXX format.</p>
                   </div>
                 </div>
+                
               </div>
 
               <!-- Message -->

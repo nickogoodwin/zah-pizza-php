@@ -1,0 +1,19 @@
+body {
+    height: 100vh;
+}
+
+/* main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 90%;
+    overflow-x: auto;
+    overflow-y: hidden;
+} */
+
+nav .btn {
+    transition: all 100ms ease-in-out;
+}
+
+nav .btn:hover {
+    transform: scale(.9);
+}
