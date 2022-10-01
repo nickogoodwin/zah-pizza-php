@@ -1,19 +1,24 @@
 body {
+    display: flex;
     height: 100vh;
+    flex-direction: column;
 }
 
-/* main {
-    display: flex;
-    flex-wrap: nowrap;
-    height: 90%;
-    overflow-x: auto;
-    overflow-y: hidden;
-} */
+main {
+    flex: 1;
+}
+
+.sidenav {
+    border: 1px solid blue;
+    position: absolute;
+    top: 150px;
+    left: 0;
+}
 
 nav .btn {
     transition: all 100ms ease-in-out;
 }
 
 nav .btn:hover {
-    transform: scale(.9);
+    transform: scale(.95);
 }

@@ -49,10 +49,12 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 
+  <!-- My CSS -->
+  <link rel="stylesheet" href="/zah-pizza-php/admin/public/admin.css">
+
   <!-- My JS -->
   <script defer src='public/admin.js'></script>
 
-  <!-- My CSS -->
-  <link rel="stylesheet" href="public/admin.css">
+  
 </head>
 <body>
