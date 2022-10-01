@@ -3,7 +3,7 @@ include('db.php');
 
 function get_visits() {
     global $db;
-    $query = 'SELECT * FROM visits';
+    $query = 'SELECT * FROM visits_by_employee';
     $statement = $db->prepare($query);
     $statement->execute();
 

@@ -1,3 +1,8 @@
+* {
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     height: 100vh;
@@ -9,9 +14,8 @@ main {
 }
 
 .sidenav {
-    border: 1px solid blue;
-    position: absolute;
-    top: 150px;
+    position: fixed;
+    top: 126px;
     left: 0;
 }
 
