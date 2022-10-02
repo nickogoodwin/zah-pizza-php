@@ -57,6 +57,25 @@ CREATE VIEW UNASSIGNED_EMPLOYEE_VISITS AS
 	ORDER BY visits.date DESC
 ; 
 
+Create View visits_by_employee AS
+select
+    `visits`.`id` AS `id`,
+    `visits`.`name` AS `name`,
+    `visits`.`email` AS `email`,
+    `visits`.`phone` AS `phone`,
+    `visits`.`message` AS `message`,
+    `visits`.`newsletter` AS `newsletter`,
+    `visits`.`date` AS `date`,
+    `employees`.`id` AS `employee_id`,
+    `employees`.`name` AS `employee_name`,
+    `employees`.`position` AS `employee_position`
+from (
+        `visits`
+        left join `employees` on(
+            `visits`.`employee_id` = `employees`.`id`
+        )
+    );
+
 drop user app;
 
 create USER app IDENTIFIED BY 'Pa55word';
