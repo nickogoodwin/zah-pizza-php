@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container-fluid">
-    <a href="/zah-pizza-php/" class="navbar-brand">
+    <a href="/zah-pizza-php/admin" class="navbar-brand">
             <img
               src="/zah-pizza-php/public/img/pizza-logo.png"
               height="100"

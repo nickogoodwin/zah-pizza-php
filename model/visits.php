@@ -1,9 +1,31 @@
 <?php
 include('db.php');
 
-function get_visits() {
+function get_visits($id = null, $name = null, $email = null, $employee_id = null) {
     global $db;
-    $query = 'SELECT * FROM visits_by_employee';
+
+    if ($id) {
+        $query = 'SELECT * FROM visits_by_employee
+                    WHERE id = '.$id;
+    } elseif ($name) {
+        $query = 'SELECT * FROM visits_by_employee
+                    WHERE name LIKE '.$name;
+    } elseif ($email) {
+        $query = 'SELECT * FROM visits_by_employee
+                    WHERE email = '.$email;
+    } elseif ($employee_id) {
+        if ($employee_id === 'unassigned') {
+            $query = 'SELECT * FROM visits_by_employee
+                    WHERE employee_id IS NULL';
+        } else {
+            $query = 'SELECT * FROM visits_by_employee
+                    WHERE employee_id = '.$employee_id;
+        }
+        
+    } else {
+        $query = 'SELECT * FROM visits_by_employee';
+    }
+    
     $statement = $db->prepare($query);
     $statement->execute();
 
