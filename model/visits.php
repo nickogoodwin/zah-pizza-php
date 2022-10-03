@@ -13,23 +13,6 @@ function get_visits() {
     return $visits;
 }
 
-function add_visit($name, $email, $phone, $message, $newsletter) {
-    global $db;
-    $query = 'INSERT INTO visits
-                    (name, email, phone, message, newsletter)
-                VALUES
-                    (:name, :email, :phone, :message, :newsletter)';
-    $statement = $db->prepare($query);
-    $statement->bindValue(':name', $name);
-    $statement->bindValue(':email', $email);
-    $statement->bindValue(':phone', $phone);
-    $statement->bindValue(':message', $message);
-    $statement->bindValue(':newsletter', $newsletter);
-
-    $statement->execute();
-    $statement->closeCursor();
-}
-
 function update_visit($id, $name, $email, $phone, $message) {
     global $db;
     $query = 'UPDATE visits
@@ -44,6 +27,23 @@ function update_visit($id, $name, $email, $phone, $message) {
     $statement->bindValue(':message', $message);
     $statement->execute();
     
+    $statement->closeCursor();
+}
+
+function add_visit($name, $email, $phone, $message, $newsletter) {
+    global $db;
+    $query = 'INSERT INTO visits
+                    (name, email, phone, message, newsletter)
+                VALUES
+                    (:name, :email, :phone, :message, :newsletter)';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':name', $name);
+    $statement->bindValue(':email', $email);
+    $statement->bindValue(':phone', $phone);
+    $statement->bindValue(':message', $message);
+    $statement->bindValue(':newsletter', $newsletter);
+
+    $statement->execute();
     $statement->closeCursor();
 }
 
