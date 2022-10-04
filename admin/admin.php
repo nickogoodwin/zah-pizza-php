@@ -58,7 +58,7 @@ global $visits;
                                   <!-- Reply -->
                                   <!-- Button trigger modal -->
                                   <button title="Reply" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ReplyModal-<?php echo $visit['id'] ; ?>">
-                                  <i class="bi bi-chat"></i>
+                                  <i class="bi bi-envelope"></i>
                                   </button>
 
                                   <!-- Modal -->
