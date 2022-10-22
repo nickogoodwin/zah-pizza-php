@@ -29,7 +29,7 @@
             <a
               class="nav-link active text-white"
               aria-current="page"
-              href="."
+              href="/zah-pizza-php/"
               >Home</a
             >
             <a class="nav-link text-white" href="/zah-pizza-php/pages/menu">Menu</a>
