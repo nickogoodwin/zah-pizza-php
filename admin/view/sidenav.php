@@ -2,7 +2,7 @@
 global $employees;
 ?>
 
-<nav id="sidenav" class="conatiner-fluid d-flex flex-column align-items-center justify-content-center align-items-sm-start shadow rounded gap-2 p-4">
+<nav id="sidenav" class="bg-white conatiner-fluid d-flex flex-column align-items-center justify-content-center align-items-sm-start shadow rounded gap-2 p-4">
         <h5>Filter</h5>        
 
         <form action="." method="post" class="p-1">

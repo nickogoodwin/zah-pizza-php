@@ -6,7 +6,7 @@ global $visits;
 
 
 ?>
-<main class="container-fluid p-3 overflow-scroll">
+<main class="container-fluid p-3 overflow-scroll bg-light">
 <div class="row flex-nowrap h-100">
         <div class="col-auto col-md-4 col-xl-3">
           <?php include('view/sidenav.php');?>
@@ -14,7 +14,7 @@ global $visits;
         
 
         <div class="col table-responsive-lg h-100">
-        <table class="table table-striped table-hover table-bordered shadow">
+        <table class="bg-white table table-striped table-hover table-bordered shadow">
                 <thead>
                     <th>ID</th>
                     <th>Name</th>
@@ -43,6 +43,8 @@ global $visits;
                             <td><?php echo $visit['employee_name']; ?></td> 
                             <td><?php echo $visit['employee_position']; ?></td> 
                             <td>
+                              <!-- Visit assignment 'status.' -->
+                              <!-- TODO: add ability to assign/unassign visits -->
                             <?php if ($visit['employee_id']) { ?>
                               <span class="badge bg-success">
                                 Assigned
@@ -95,7 +97,7 @@ global $visits;
 
                                           </div>
                                         </form>
-                                        <p class="text-center text-secondary">Email's not functional at the moment</p>
+                                        <p class="text-center text-secondary">*Email is not functional at the moment</p>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             <button type="submit" class="btn btn-success" disabled>Send</button>
@@ -124,8 +126,7 @@ global $visits;
                                       <form action="." method="POST">
                                           <div class="modal-body">
                                               <input type="hidden" name="id" value="<?php echo $visit['id']; ?>">
-
-                                              <input class="form-control" type="hidden" name="action" value="update_visit">
+                                              <input type="hidden" name="action" value="update_visit">
 
                                               <label class="form-label" for="name">Name</label>
                                               <input class="form-control" type="text" name="name" id="name" value="<?php echo $visit['name']; ?>">
@@ -137,7 +138,7 @@ global $visits;
                                               <input class="form-control" type="text" name="phone" id="phone" value="<?php echo $visit['phone']; ?>">
 
                                               <label class="form-label" for="message">Message</label>
-                                              <input class="form-control" type="text" name="message" id="message" value="<?php echo $visit['message']; ?>">
+                                              <textarea class="form-control" name="message" id="message" ><?php echo $visit['message']; ?></textarea>
 
                                           </div>
                                           <div class="modal-footer">
@@ -190,9 +191,21 @@ global $visits;
                     <?php }; ?>
                 </tbody>
             </table>
+            <br />
        </div>
     </div>
 
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="..." class="rounded me-2" alt="...">
+    <strong class="me-auto">Bootstrap</strong>
+    <small>11 mins ago</small>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Hello, world! This is a toast message.
+  </div>
+</div>
 
             
 </main>

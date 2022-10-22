@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
     <div class="container-fluid">
     <a href="/zah-pizza-php/admin" class="navbar-brand">
             <img
