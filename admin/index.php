@@ -18,8 +18,11 @@ switch ($action) {
             header('Location: .');
             break;   
         }
+        //PHP 8
+        // $visits = get_visits(employee_id: $employee);
 
-        $visits = get_visits($employee_id = $employee);
+        //PHP 7
+        $visits = get_visits(null, null, null, $employee);
         
         include('admin.php');
         break;
@@ -28,7 +31,7 @@ switch ($action) {
 
         delete_visit($id);
         
-        header('Location: .');
+        include('admin.php');
         break;
     case 'update_visit':
         $id = filter_input(INPUT_POST, 'id');
@@ -39,7 +42,7 @@ switch ($action) {
 
         update_visit($id, $name, $email, $phone, $message);
 
-        header('Location: .');
+        include('admin.php');
         break;
     default: 
     $visits = get_visits();

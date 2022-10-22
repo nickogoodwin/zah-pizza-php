@@ -8,12 +8,12 @@ global $visits;
 ?>
 <main class="container-fluid p-3 overflow-scroll bg-light">
 <div class="row flex-nowrap h-100">
-        <div class="col-auto col-md-4 col-xl-3">
+        <div class="col-auto col-md-4 col-xl-3 p-1">
           <?php include('view/sidenav.php');?>
         </div>
         
 
-        <div class="col table-responsive-lg h-100">
+        <div class="col table-responsive-lg h-100 p-1">
         <table class="bg-white table table-striped table-hover table-bordered shadow">
                 <thead>
                     <th>ID</th>
