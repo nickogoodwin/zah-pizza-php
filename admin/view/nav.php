@@ -15,6 +15,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
+        <a class="nav-link link-primary" href="/zah-pizza-php/admin">Home</a>
+        <a class="nav-link link-primary" href="/zah-pizza-php/admin/pages/visits">Visits</a>
+        <a class="nav-link link-primary" href="/zah-pizza-php/admin/pages/employees">Employees</a>
         <a class="nav-link btn btn-primary text-white" href="/zah-pizza-php/"><i class="bi bi-arrow-left"></i> Back To Zah Pizza</a>
       </div>
     </div>

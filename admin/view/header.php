@@ -53,7 +53,7 @@
   <link rel="stylesheet" href="/zah-pizza-php/admin/public/admin.css">
 
   <!-- My JS -->
-  <script defer src='public/admin.js'></script>
+  <script defer src='/zah-pizza-php/admin/public/admin.js'></script>
 
   
 </head>

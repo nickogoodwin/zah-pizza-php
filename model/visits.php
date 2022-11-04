@@ -35,10 +35,10 @@ function get_visits($id = null, $name = null, $email = null, $employee_id = null
     return $visits;
 }
 
-function update_visit($id, $name, $email, $phone, $message) {
+function update_visit($id, $name, $email, $phone, $message, $newsletter = false) {
     global $db;
     $query = 'UPDATE visits
-                SET name = :name, email = :email, phone = :phone, message = :message
+                SET name = :name, email = :email, phone = :phone, message = :message, newsletter = :newsletter
                 WHERE id = :id';
     $statement = $db->prepare($query);
 
@@ -47,12 +47,13 @@ function update_visit($id, $name, $email, $phone, $message) {
     $statement->bindValue(':email', $email);
     $statement->bindValue(':phone', $phone);
     $statement->bindValue(':message', $message);
+    $statement->bindValue(':newsletter', $newsletter);
     $statement->execute();
     
     $statement->closeCursor();
 }
 
-function add_visit($name, $email, $phone, $message, $newsletter) {
+function add_visit($name, $email, $phone, $message, $newsletter = false) {
     global $db;
     $query = 'INSERT INTO visits
                     (name, email, phone, message, newsletter)
