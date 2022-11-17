@@ -36,6 +36,7 @@
             <a class="nav-link text-white" href="/zah-pizza-php/pages/faq">FAQ</a>
             <a  class="nav-link text-white" href="/zah-pizza-php/pages/about">About Us</a>
             <a class="nav-link text-white" href="/zah-pizza-php/pages/contact">Contact Us</a>
+            <a class="nav-link text-white" href="/zah-pizza-php/admin">Admin</a>
             <a  id="build" class="nav-link" href="/zah-pizza-php/pages/zahbox"
               >Build Your Zah Box</a
             >
