@@ -1,3 +1,8 @@
+<?php
+include('view/header.php');
+include('view/nav.php');
+?>
+
 <main>
       <!-- Hero -->
 <section
@@ -22,16 +27,16 @@
       <section id="gallery">
         <div class="row g-0">
           <div class="container col-4">
-            <img class="img-main" id="image1" src="/zah-pizza-php/public/img/rollover/pizza1.jpg" alt="pizza in oven"/>
-            <img class="img-hover" id="image2" src="/zah-pizza-php/public/img/rollover/pizza2.jpg" alt="slice o zah" />
+            <img class="img-main" id="image1" src="<?php echo $app_path; ?>/public/img/rollover/pizza1.jpg" alt="pizza in oven"/>
+            <img class="img-hover" id="image2" src="<?php echo $app_path; ?>/public/img/rollover/pizza2.jpg" alt="slice o zah" />
           </div>
           <div class="container col-4">
-            <img class="img-main" id="image3" src="/zah-pizza-php/public/img/rollover/pizza3.jpg" alt="pizza on paper"/>
-            <img class="img-hover" id="image4" src="/zah-pizza-php/public/img/rollover/pizza4.jpg" alt="three pizzas" />
+            <img class="img-main" id="image3" src="<?php echo $app_path; ?>/public/img/rollover/pizza3.jpg" alt="pizza on paper"/>
+            <img class="img-hover" id="image4" src="<?php echo $app_path; ?>/public/img/rollover/pizza4.jpg" alt="three pizzas" />
           </div>
           <div class="container col-4">
-            <img class="img-main" id="image5" src="/zah-pizza-php/public/img/rollover/pizza5.jpg" alt="pizza with spinach and tomato"/>
-            <img class="img-hover" id="image6" src="/zah-pizza-php/public/img/rollover/pizza6.jpg" alt="pizza by fire" />
+            <img class="img-main" id="image5" src="<?php echo $app_path; ?>/public/img/rollover/pizza5.jpg" alt="pizza with spinach and tomato"/>
+            <img class="img-hover" id="image6" src="<?php echo $app_path; ?>/public/img/rollover/pizza6.jpg" alt="pizza by fire" />
           </div>
         </div>
         
@@ -152,7 +157,7 @@
                 class="container py-5 d-xl-flex justify-content-xl-around align-items-xl-center"
               >
                 <div class="card" id="basic">
-                  <img src="/zah-pizza-php/public/img/pizza-basic.png" alt="single pizza box" />
+                  <img src="<?php echo $app_path; ?>/public/img/pizza-basic.png" alt="single pizza box" />
                   <div class="card-body">
                     <h4 class="card-title">Basic</h4>
                     <h5 id="basic-price">$49.99/mo</h5>
@@ -163,7 +168,7 @@
                   </div>
                 </div>
                 <div class="card" id="deluxe">
-                  <img src="/zah-pizza-php/public/img/pizza-deluxe.png" alt="2 pizza boxes" />
+                  <img src="<?php echo $app_path; ?>/public/img/pizza-deluxe.png" alt="2 pizza boxes" />
                   <div class="card-body">
                     <h4 class="card-title">Deluxe</h4>
                     <h5 id="deluxe-price">$59.99/mo</h5>
@@ -174,7 +179,7 @@
                   </div>
                 </div>
                 <div class="card" id="ultimate">
-                  <img src="/zah-pizza-php/public/img/pizza-ultimate.png" alt="3 pizza boxes" />
+                  <img src="<?php echo $app_path; ?>/public/img/pizza-ultimate.png" alt="3 pizza boxes" />
                   <div class="card-body">
                     <h4 class="card-title">Ultimate</h4>
                     <h5 id="ultimate-price">$69.99/mo</h5>
@@ -189,7 +194,6 @@
           </div>
         </div>
       </section>
-
-      
-
 </main>
+
+<?php include('view/footer.php');

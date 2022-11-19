@@ -1,14 +1,29 @@
 <?php
-$action = filter_input(INPUT_POST, 'action');
-if ($action == NULL) {
-    $action = filter_input(INPUT_GET, 'action');
-} 
+include('../util/main.php');
+include('view/admin/header.php');
+include('view/admin/nav.php');
+?>
 
-switch ($action) { 
+<main class="container-fluid p-3 overflow-auto bg-light">
+  <div class="row flex-column flex-nowrap h-100 w-100 justify-content-center align-items-center">
+    <h3 class="text-center">Welcome to Zahdmin!</h3>
+    <div class="d-flex flex-row gap-1 justify-content-center">
+        <a href="visits" class="btn btn-primary">Visits</a>
+        <a href="employees" class="btn btn-success">Employees</a>
+    </div>
+  </div>      
+</main>
 
-    default: 
-    include('admin.php');
-}
+<style>
+  a.btn {
+    transition: all 100ms ease-in-out;
+  }
 
+  a.btn:hover {
+    transform: scale(.95);
+  }
+</style>
 
+<?php
+include('view/admin/footer.php')
 ?>

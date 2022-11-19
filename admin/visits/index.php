@@ -1,9 +1,12 @@
 <?php
-include('../../../model/visits.php');
-include('../../../model/employees.php');
+require_once('../../util/main.php');
+require_once('../../model/database.php');
+require_once('../../model/employee_db.php');
+require_once('../../model/visit_db.php');
+require_once('../../model/employee.php');
+require_once('../../model/visit.php');
 
-$employees = get_employees();
-
+$employees = EmployeeDB::getEmployees();
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -22,17 +25,17 @@ switch ($action) {
         // $visits = get_visits(employee_id: $employee);
 
         //PHP 7
-        $visits = get_visits(null, null, null, $employee);
+        $visits = VisitDB::getVisits(null, null, null, $employee);
         
-        include('visits.php');
+        include('visit_list.php');
         break;
     case 'delete_visit':
         $id = filter_input(INPUT_POST, 'id');
 
-        delete_visit($id);
+        VisitDB::deleteVisit($id);
         
-        $visits = get_visits();
-        include('visits.php');
+        $visits = VisitDB::getVisits();
+        include('visit_list.php');
         break;
     case 'add_visit':
         $name = filter_input(INPUT_POST, 'name');
@@ -46,10 +49,10 @@ switch ($action) {
             $newsletter = true;
         }
 
-        add_visit($name, $email, $phone, $message, $newsletter);
+        VisitDB::addVisit($name, $email, $phone, $message, $newsletter);
 
-        $visits = get_visits();
-        include('visits.php');
+        $visits = VisitDB::getVisits();
+        include('visit_list.php');
         break;
     case 'update_visit':
         $id = filter_input(INPUT_POST, 'id');
@@ -64,15 +67,12 @@ switch ($action) {
             $newsletter = true;
         }
 
-        update_visit($id, $name, $email, $phone, $message, $newsletter);
+        VisitDB::updateVisit($id, $name, $email, $phone, $message, $newsletter);
 
-        $visits = get_visits();
-        include('visits.php');
+        $visits = VisitDB::getVisits();
+        include('visit_list.php');
         break;
     default: 
-    $visits = get_visits();
-    include('visits.php');
+    $visits = VisitDB::getVisits();
+    include('visit_list.php');
 }
-
-
-?>

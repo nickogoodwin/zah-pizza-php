@@ -27,21 +27,21 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/zah-pizza-php/public/img/favicon/apple-touch-icon.png"
+      href="<?php echo $app_path; ?>/public/img/favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/zah-pizza-php/public/img/favicon/favicon-32x32.png"
+      href="<?php echo $app_path; ?>/public/img/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/zah-pizza-php/public/img/favicon/favicon-16x16.png"
+      href="<?php echo $app_path; ?>/public/img/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="/zah-pizza-php/public/img/favicon/site.webmanifest" />
+    <link rel="manifest" href="<?php echo $app_path; ?>/public/img/favicon/site.webmanifest" />
 
     <!-- Animate.css -->
     <link
@@ -50,10 +50,7 @@
   />
 
   <!-- My CSS -->
-  <link rel="stylesheet" href="/zah-pizza-php/admin/public/admin.css">
-
-  <!-- My JS -->
-  <script defer src='/zah-pizza-php/admin/public/admin.js'></script>
+  <link rel="stylesheet" href="<?php echo $app_path; ?>/public/css/admin.css">
 
   
 </head>

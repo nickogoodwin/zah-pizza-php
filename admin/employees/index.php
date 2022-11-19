@@ -1,5 +1,8 @@
 <?php
-require('./model/listemployees.php');
+require_once('../../util/main.php');
+require_once('../../model/database.php');
+require_once('../../model/employee_db.php');
+require_once('../../model/employee.php');
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -20,14 +23,14 @@ switch ($action) {
         //PHP 7
         $employees = EmployeeDB::getEmployees($employee_id, null, null);
         
-        include('employees.php');
+        include('employee_list.php');
         break;
     case 'delete':
         $id = filter_input(INPUT_POST, 'id');
         EmployeeDB::deleteEmployee($id);
         
         $employees = EmployeeDB::getEmployees();
-        include('employees.php');
+        include('employee_list.php');
         break;
     case 'add':
         $name = filter_input(INPUT_POST, 'name');
@@ -35,7 +38,7 @@ switch ($action) {
         EmployeeDB::addEmployee($name, $position);
 
         $employees = EmployeeDB::getEmployees();
-        include('employees.php');
+        include('employee_list.php');
         break;
     case 'update':
         $id = filter_input(INPUT_POST, 'id');
@@ -44,11 +47,11 @@ switch ($action) {
         EmployeeDB::updateEmployee($id, $name, $position);
         
         $employees = EmployeeDB::getEmployees();
-        include('employees.php');
+        include('employee_list.php');
         break;
     default: 
         $employees = EmployeeDB::getEmployees();
-        include('employees.php');
+        include('employee_list.php');
 }
 
 

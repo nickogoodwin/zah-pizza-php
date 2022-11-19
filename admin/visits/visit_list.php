@@ -1,6 +1,6 @@
 <?php
-include('../../view/header.php');
-include('../../view/nav.php');
+include('view/admin/header.php');
+include('view/admin/nav.php');
 
 global $visits;
 
@@ -9,7 +9,7 @@ global $visits;
 <main class="container-fluid p-3 overflow-auto bg-light">
 <div class="row flex-nowrap h-100">
         <div class="col-auto col-md-3 col-xl-3 p-1">
-          <?php include('../../view/sidenav.php');?>
+          <?php include('admin/visits/sidenav.php');?>
         </div>
         
 
@@ -216,5 +216,5 @@ global $visits;
 </main>
 
 <?php
-include('../../view/footer.php')
+include('view/admin/footer.php')
 ?>

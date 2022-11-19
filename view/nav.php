@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-light text-white">
     <div class="container-fluid">
-        <a href="/zah-pizza-php/" class="navbar-brand">
+        <a href="<?php echo $app_path; ?>/" class="navbar-brand">
             <img
-              src="/zah-pizza-php/public/img/pizza-logo.png"
+              src="<?php echo $app_path; ?>/public/img/pizza-logo.png"
               height="100"
               width="100"
               alt="Pizza Logo"
@@ -29,15 +29,15 @@
             <a
               class="nav-link active text-white"
               aria-current="page"
-              href="/zah-pizza-php/"
+              href="<?php echo $app_path; ?>"
               >Home</a
             >
-            <a class="nav-link text-white" href="/zah-pizza-php/pages/menu">Menu</a>
-            <a class="nav-link text-white" href="/zah-pizza-php/pages/faq">FAQ</a>
-            <a  class="nav-link text-white" href="/zah-pizza-php/pages/about">About Us</a>
-            <a class="nav-link text-white" href="/zah-pizza-php/pages/contact">Contact Us</a>
-            <a class="nav-link text-white" href="/zah-pizza-php/admin">Admin</a>
-            <a  id="build" class="nav-link" href="/zah-pizza-php/pages/zahbox"
+            <a class="nav-link text-white" href="<?php echo $app_path; ?>/pages/menu">Menu</a>
+            <a class="nav-link text-white" href="<?php echo $app_path; ?>/pages/faq">FAQ</a>
+            <a  class="nav-link text-white" href="<?php echo $app_path; ?>/pages/about">About Us</a>
+            <a class="nav-link text-white" href="<?php echo $app_path; ?>/pages/contact">Contact Us</a>
+            <a class="nav-link text-white" href="<?php echo $app_path; ?>/admin">Admin</a>
+            <a  id="build" class="nav-link" href="<?php echo $app_path; ?>/pages/zahbox"
               >Build Your Zah Box</a
             >
           </div>

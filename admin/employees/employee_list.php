@@ -1,13 +1,12 @@
 <?php
-include('../../view/header.php');
-include('../../view/nav.php');
-global $employees
+include('view/admin/header.php');
+include('view/admin/nav.php');
 ?>
 
 <main class="container-fluid p-3 overflow-scroll bg-light">
 <div class="row flex-nowrap h-100">
         <div class="col-auto col-md-3 col-xl-3 p-1">
-           <?php include('../../view/sidenav.php');?>
+           <?php include('admin/employees/sidenav.php');?>
         </div>
         
 
@@ -163,5 +162,5 @@ global $employees
 </main>
 
 <?php
-include('../../view/footer.php')
+include('view/admin/footer.php')
 ?>
