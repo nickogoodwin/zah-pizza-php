@@ -11,9 +11,6 @@
             >Pizza icons created by Freepik - Flaticon</a
           >
         </div>
-        <div>
-          <a href="/zah-pizza-php/admin">Admin</a>
-        </div>
       </div>
     </footer>
   </body>

@@ -1,3 +1,6 @@
+<?php include 'view/header.php'; ?>
+<?php include 'view/nav.php' ?>
+
 <main class="bg-dark">
   <section
     id="error"
@@ -8,12 +11,10 @@
         <h1>Error</h1>
       </div>
       <div class="section-text" style="border: solid 2px red">
-        <!-- <p><?php echo $error_message?></p> -->
+        <p><?php echo $error_message?></p>
       </div>
     </div>
   </section>
 </main>
 
-<?php
-include('../view/footer.php');
-?>
+<?php include 'view/footer.php'; ?>
