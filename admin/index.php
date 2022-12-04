@@ -11,6 +11,9 @@ include('view/admin/nav.php');
         <a href="visits" class="btn btn-primary">Visits</a>
         <a href="employees" class="btn btn-success">Employees</a>
     </div>
+    <div class="my-2 d-flex flex-row gap-1 justify-content-center">
+        <a href="" class="btn btn-danger">Throw Error</a>
+    </div>
   </div>      
 </main>
 
