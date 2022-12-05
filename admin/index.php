@@ -2,31 +2,52 @@
 include('../util/main.php');
 include('view/admin/header.php');
 include('view/admin/nav.php');
+
+function guessing_game($guess) {
+  if (empty($guess)) {
+    throw new Exception("You didn't enter a value silly.");
+  }
+  if (!is_numeric($guess)) {
+    throw new Exception('Value must be a number.');
+  }
+  if ($guess < 0 || $guess > 10) {
+    throw new Exception('Value must be a number between 1 and 10');
+  }
+  return $guess;
+}
+
+$action = filter_input(INPUT_POST, 'action');
+if ($action == NULL) {
+    $action = filter_input(INPUT_GET, 'action');
+} 
+
+switch($action) {
+  case 'game':
+    $message = "";
+    $error_message = "";
+    $gamer=true;
+
+    try {
+      $guess = filter_input(INPUT_POST, 'guess');
+      guessing_game($guess);
+      $message = "Your guess of \"".$guess."\" was in fact between 1 and 10. Good job!";
+      include('admin.php');
+    } catch (Exception $e) {
+      $error_message = $e->getMessage();
+      include('errors/index.php');
+    }
+    break;
+  default:
+    $message = "";
+    $gamer = false;
+    include('admin.php');
+}
 ?>
 
-<main class="container-fluid p-3 overflow-auto bg-light">
-  <div class="row flex-column flex-nowrap h-100 w-100 justify-content-center align-items-center">
-    <h3 class="text-center">Welcome to Zahdmin!</h3>
-    <div class="d-flex flex-row gap-1 justify-content-center">
-        <a href="visits" class="btn btn-primary">Visits</a>
-        <a href="employees" class="btn btn-success">Employees</a>
-    </div>
-    <div class="my-2 d-flex flex-row gap-1 justify-content-center">
-        <a href="" class="btn btn-danger">Throw Error</a>
-    </div>
-  </div>      
-</main>
-
-<style>
-  a.btn {
-    transition: all 100ms ease-in-out;
-  }
-
-  a.btn:hover {
-    transform: scale(.95);
-  }
-</style>
 
 <?php
 include('view/admin/footer.php')
 ?>
+
+
+

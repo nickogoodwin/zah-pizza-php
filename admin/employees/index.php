@@ -17,10 +17,6 @@ switch ($action) {
             header('Location: .');
             break;   
         }
-        //PHP 8
-        // $employees = getEmployees(employee_id: $employee);
-
-        //PHP 7
         $employees = EmployeeDB::getEmployees($employee_id, null, null);
         
         include('employee_list.php');
