@@ -1,10 +1,11 @@
 <?php
+session_start();
 require_once('../../util/main.php');
 require_once('../../model/database.php');
-require_once('../../model/employee_db.php');
-require_once('../../model/visit_db.php');
-require_once('../../model/employee.php');
-require_once('../../model/visit.php');
+require_once('../../model/employee/employee_db.php');
+require_once('../../model/visit/visit_db.php');
+require_once('../../model/employee/employee.php');
+require_once('../../model/visit/visit.php');
 
 $employees = EmployeeDB::getEmployees();
 
@@ -12,6 +13,10 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 } 
+
+if (!isset($_SESSION['is_admin'])) {
+    header("Location: ../");
+}
 
 switch ($action) { 
     case 'filter_visits':

@@ -15,7 +15,7 @@ global $visits;
 
         <div class="col table-responsive-lg h-100 p-1">
           
-        <table class="bg-white table table-striped table-hover table-bordered shadow w-auto">
+        <table class="bg-white table table-striped table-hover table-bordered shadow w-100">
                 <thead>
                     <th>ID</th>
                     <th>Name</th>
@@ -66,7 +66,7 @@ global $visits;
                               </span>
                             <?php } ?>
                             </td>
-                            <td>
+                            <td style="width:1px">
                                 <div class="d-flex flex-row gap-1">
                                   <!-- Reply -->
                                   <!-- Button trigger modal -->

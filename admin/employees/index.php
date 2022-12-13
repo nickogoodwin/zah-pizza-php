@@ -1,13 +1,20 @@
 <?php
+session_start();
 require_once('../../util/main.php');
-require_once('../../model/database.php');
-require_once('../../model/employee_db.php');
-require_once('../../model/employee.php');
+require_once('model/database.php');
+require_once('model/employee/employee_db.php');
+require_once('model/employee/employee.php');
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 } 
+
+if (!isset($_SESSION['is_admin'])) {
+    header("Location: ../");
+}
+
+
 
 switch ($action) { 
     case 'filter':
