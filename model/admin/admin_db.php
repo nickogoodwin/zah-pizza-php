@@ -1,5 +1,5 @@
 <?php
-function add_admin($email, $password, $firstName, $lastName,) {
+function add_admin($email, $password, $firstName, $lastName) {
     $db = DB::getDB();
     $hash = password_hash($password, PASSWORD_DEFAULT);
     $query = 'INSERT INTO users (email, password, firstName, lastName)
