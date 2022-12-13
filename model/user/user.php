@@ -12,47 +12,47 @@ class User {
 
     // ID
     public function getId() {
-        return $this->$id;
+        return $this->id;
       }
     
       public function setId($value) {
-        $this->$id = $value;
+        $this->id = $value;
       }
     
       // Email
       public function getEmail() {
-        return $this->$email;
+        return $this->email;
       }
     
       public function setEmail($value) {
-        $this->$email = $value;
+        $this->email = $value;
       }
     
       // Password
       public function getPassword() {
-        return $this->$password;
+        return $this->password;
       }
     
       public function setPassword($value) {
-        $this->$password = $value;
+        $this->password = $value;
       }
 
       // First name
       public function getFirstName() {
-        return $this->$firstName;
+        return $this->firstName;
       }
     
       public function setFirstName($value) {
-        $this->$firstName = $value;
+        $this->firstName = $value;
       }
 
       // Last Name
       public function getLastName() {
-        return $this->$password;
+        return $this->password;
       }
     
       public function setLastName($value) {
-        $this->$password = $value;
+        $this->password = $value;
       }
 }
 ?>

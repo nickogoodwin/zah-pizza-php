@@ -32,7 +32,6 @@ function isAdmin($email, $password) {
 
 //add admin user if it doesn't exist
 function populateAdmin() {
-    echo "populateAdmin run";
     $db = DB::getDB();
     $query = 'SELECT * FROM users
                 WHERE firstName = "admin"';
