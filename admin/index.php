@@ -7,18 +7,8 @@ require_once('model/admin/admin_db.php');
 include('view/admin/header.php');
 include('view/admin/nav.php');
 
-// function guessing_game($guess) {
-//   if (empty($guess)) {
-//     throw new Exception("You didn't enter a value silly.");
-//   }
-//   if (!is_numeric($guess)) {
-//     throw new Exception('Value must be a number.');
-//   }
-//   if ($guess < 0 || $guess > 10) {
-//     throw new Exception('Value must be a number between 1 and 10');
-//   }
-//   return $guess;
-// }
+// from admin_db. this is to populate the database w/ a default admin user if none exists
+populateAdmin();
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -70,21 +60,6 @@ switch($action) {
     session_destroy();
     header("Location: .");
     break;
-  // case 'game':
-  //   $message = "";
-  //   $error_message = "";
-  //   $gamer = true;
-
-  //   try {
-  //     $guess = filter_input(INPUT_POST, 'guess');
-  //     guessing_game($guess);
-  //     $message = "Your guess of \"".$guess."\" was in fact between 1 and 10. Good job!";
-  //     include('admin.php');
-  //   } catch (Exception $e) {
-  //     $error_message = $e->getMessage();
-  //     include('errors/index.php');
-  //   }
-  //   break;
 }
 ?>
 

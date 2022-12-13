@@ -30,4 +30,19 @@ function isAdmin($email, $password) {
     }
 }
 
+//add admin user if it doesn't exist
+function populateAdmin() {
+    echo "populateAdmin run";
+    $db = DB::getDB();
+    $query = 'SELECT * FROM users
+                WHERE firstName = "admin"';
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $row = $statement->fetch();
+    $statement->closeCursor();
+
+    if (!$row) {
+        add_admin('admin@zahpizza.com', 'Pa55w0rd', 'Admin', 'User');
+    }
+}
 ?>
